@@ -1,0 +1,15 @@
+
+There are 2 track 1 records in the memory data
+
+<Information in record 1>
+Cardholder's Name: Binhai/Zhu
+Card Number: 4128123412341234
+Expiration Date: 09/2015
+CVC Number: 101
+
+<Information in record 2>
+Cardholder's Name: Paxton/John
+Card Number: 4128123412341235
+Expiration Date: 12/2018
+CVC Number: 131
+

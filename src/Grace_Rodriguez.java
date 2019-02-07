@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.regex.*;
 import java.io.*;
 
-public class Driver {
+public class Grace_Rodriguez {
     public static void main(String[] args){
 
         File dump = new File("memorydump.txt");
@@ -27,16 +27,27 @@ public class Driver {
 
         matcher = pattern.matcher(contents);
 
-        System.out.println("\nThere are " + count + " track 1 records in the memory data\n");
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter("Grace_Rodriguez.txt", "UTF-8");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+
+        writer.println("\nThere are " + count + " track 1 records in the memory data\n");
 
         count = 0;
         while (matcher.find()){
             count++;
-            System.out.println("<Information in record " + count + ">");
-            System.out.println("Cardholder's Name: " + matcher.group("name"));
-            System.out.println("Card Number: " + matcher.group("number"));
-            System.out.println("Expiration Date: " + matcher.group("month") + "/20" + matcher.group("year"));
-            System.out.println("CVC Number: " + matcher.group("cvc") + '\n');
+            writer.println("<Information in record " + count + ">");
+            writer.println("Cardholder's Name: " + matcher.group("name"));
+            writer.println("Card Number: " + matcher.group("number"));
+            writer.println("Expiration Date: " + matcher.group("month") + "/20" + matcher.group("year"));
+            writer.println("CVC Number: " + matcher.group("cvc") + '\n');
         }
+        writer.close();
     }
 }
